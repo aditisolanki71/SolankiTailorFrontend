@@ -1,11 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Router, browserHistory, match } from 'react-router';
 
-ReactDOM.render(
-  <React>
-    <App />
-  </React>,
-  document.getElementById('root')
-);
+import getroutes from './routes';
+const mountNode = document.getElementById('content');
+//file-1
+const render = routes => {
+  match(
+    { history: browserHistory, routes },
+    (error, redirectLocation, renderProps) => {
+      ReactDOM.render(
+        <Router
+          {...renderProps}
+          history={browserHistory}
+        >
+          {routes}
+        </Router>,
+        mountNode
+      );
+    }
+  );
+};
+render(getroutes(window.location.host, window.location.pathname));
