@@ -22,3 +22,9 @@ const render = routes => {
   );
 };
 render(getroutes(window.location.host, window.location.pathname));
+
+if (module.hot) {
+  module.hot.accept(['./App', './routes'], () => {
+    render(getroutes(window.location.host, window.location.pathname));
+  });
+}
