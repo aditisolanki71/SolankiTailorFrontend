@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, browserHistory, match } from 'react-router';
-
+import './font-awesome.js';
 import getroutes from './routes';
 const mountNode = document.getElementById('content');
 //file-1
