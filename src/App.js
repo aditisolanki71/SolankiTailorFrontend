@@ -1,13 +1,16 @@
 import React from 'react';
-
-function App() {
+// import Navbar from './containers/Navbar/index'
+import Header from './containers/Header/index'
+class App extends React.Component {
+  render() {
   return (
     <div className="App">
       <header className="App-header">
-      Home Page
+        <Header />
       </header>
+  
     </div>
-  );
+  )};
 }
 
 export default App;
