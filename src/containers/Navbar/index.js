@@ -11,6 +11,9 @@ class  Navbar extends React.Component {
                 <i className="fa" id="btn">
               <FontAwesomeIcon icon="bars" />
             </i>
+            <i className="fa" id="cancel">
+              <FontAwesomeIcon icon="times" />
+            </i>
                 {/* <i class="fas fa-bars" id="btn"/>
                 <i class="fas fa-times" id="cancel"/> */}
             </label>
