@@ -14,10 +14,8 @@ class Header extends React.Component {
                  {/* main navigation links  */}
                  <nav>
                     <ul>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">About</a></li>
                         <li><a href="#">Sign Up</a></li>
+                        <li><a href="#">Log In</a></li>
                     </ul>
                 </nav>
               </header>

@@ -21,9 +21,12 @@ class  Navbar extends React.Component {
             <header>My App</header>
                 <ul>
                     <li><a href="#"><i class="fas fa-qrcode"></i>Dashboard</a></li>
-                    <li><a href="#"><i class="fas fa-calendar-week"></i>Events</a></li>
-                    <li><a href="#"><i class="far fa-question-circle"></i>About</a></li>
-                    <li><a href="#"><i class="far fa-envelope"></i>Contact</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-week"></i>Women</a></li>
+                    {/* <li><a href="#"><i class="far fa-question-circle"></i>Men</a></li>
+                    <li><a href="#"><i class="far fa-envelope"></i>Kids</a></li> */}
+                    <li><a href="#"><i class="far fa-question-circle"></i>About Us</a></li>
+                    <li><a href="#"><i class="far fa-question-circle"></i>FAQ</a></li>
+                    <li><a href="#"><i class="far fa-envelope"></i>Contact Us</a></li>
                 </ul>
             </div>
             </Fragment>
