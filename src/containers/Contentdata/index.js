@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from './Banner/index'
 import Womenbanner from './Womenbanner/index'
 import Topdesign from './Topdesign/index'
+import Testinomial from './Testinomial/index'
 import './index.css'
 class Contentdata extends React.Component {
     render() {
@@ -23,9 +24,14 @@ class Contentdata extends React.Component {
                         <Womenbanner />
                     </div>
                 </div>
-                <div clas="row">
+                <div className="row">
                     <div className="">
                         <Topdesign />
+                    </div>
+                </div>
+                <div className ="row">
+                    <div className="">
+                        <Testinomial />
                     </div>
                 </div>
             </div>

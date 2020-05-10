@@ -1,0 +1,30 @@
+/* testimonial boxes */
+.testimonial-box   {
+    display: inline-block;
+    width: 33%;
+    padding: 20px 30px;
+  }
+  .testimonial-content   {
+    background: #FFF;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  .testimonial-author           {
+  
+  }
+  .testimonial-author img {
+    float: left;
+    width: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
+  .testimonial-author h5   {
+    font-size: 18px;
+    margin: 0;
+    padding-top:15px;
+  }
+  .testimonial-author span {
+    font-size: 14px;
+  }
