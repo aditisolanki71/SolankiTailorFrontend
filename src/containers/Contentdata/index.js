@@ -3,6 +3,7 @@ import Banner from './Banner/index'
 import Womenbanner from './Womenbanner/index'
 import Topdesign from './Topdesign/index'
 import Testinomial from './Testinomial/index'
+import Slider from './Slider/index'
 import './index.css'
 class Contentdata extends React.Component {
     render() {
@@ -10,8 +11,9 @@ class Contentdata extends React.Component {
             <div>
                 {/* slider */}
                 <div className="row">
-                    <div className="box">
-                    </div>
+                    {/* <div className="box">
+                    </div> */}
+                    <Slider />
                 </div>
                 <br/>
                 <div className="row">
