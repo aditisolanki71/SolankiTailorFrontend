@@ -20,15 +20,16 @@ body     {
 header   {
   background: #222;
   color: #FFF;
-  padding: 10px 30px;
+  padding: 3px 6px;
 }
-
 /* logo */
 #logo   {
   display: inline-block;
   color: #FFF;
   text-decoration: none;
   width: 49%;
+  padding-left: 100px;
+  padding-top:10px;
 }
 #logo img    {
   width: 50px;
@@ -39,10 +40,8 @@ header   {
 #logo span   {
   display: inline-block;
 }
-
 /* main navigation */
 nav     {
-  width: 50%;
   display: inline-block;
   text-align: right;
 }

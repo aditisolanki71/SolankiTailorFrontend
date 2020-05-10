@@ -9,7 +9,6 @@ class Header extends React.Component {
                 {/* Logo */}
                 <a id="logo" href="index.html">
                     <img src="img/avatar.jpeg" alt="Logo"/>
-                    <span>My Website</span>
                 </a>
                  {/* main navigation links  */}
                  <nav>
