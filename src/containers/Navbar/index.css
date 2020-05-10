@@ -13,16 +13,25 @@
     left: -250px;
     width: 250px;
     height: auto;
-    background: #042331;
+    /* background: #042331; */
+    background: white;
     transition: all .5s ease;
+    border:1px solid blueviolet;
+    
   }
   .sidebar header {
     font-size: 22px;
-    color: white;
+    color: black;
     line-height: 40px;
     text-align: center;
-    background: #063146;
+    /* background: #063146; */
+    background: white;
     user-select: none;
+    border-bottom: 1px solid#B2BABB  ;
+ 
+  }
+  .sidebar ul {
+    margin-bottom: 0px;
   }
   .sidebar ul a{
     display: block;
@@ -30,12 +39,14 @@
     width: 100%;
     line-height: 50px;
     font-size: 20px;
-    color: white;
+    color: black;
     padding-left: 40px;
     /* padding-left: 120px; */
     box-sizing: border-box;
-    border-bottom: 1px solid black;
-    border-top: 1px solid rgba(156, 156, 156, 0.1);
+    border-bottom: 1px solid#B2BABB  ;
+    /* border-bottom: 1px solid blueviolet;
+    border-top: 1px solid rgba(156, 156, 156, 0.1); */
+    /* border:1px solid blueviolet; */
     transition: .4s;
   }
   ul li:hover a{
@@ -49,7 +60,7 @@
   }
   label #btn,label #cancel{
     position: absolute;
-    background: #042331;
+    /* background: #042331; */
     border-radius: 3px;
     cursor: pointer;
   }
