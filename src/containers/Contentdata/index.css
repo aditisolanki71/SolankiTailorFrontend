@@ -1,5 +1,5 @@
 .box {
-    width: 70%;
+    width:70%;
     height:400px;
     position:absolute;
     left:50%;
@@ -15,4 +15,7 @@
     0% {background-image: url('./images/img2.jpg');}
     35% {background-image: url('./images/img4.jpg');}
     75% {background-image: url('./images/img5.jpg');}
+}
+.banner {
+  margin-top:450px;
 }
