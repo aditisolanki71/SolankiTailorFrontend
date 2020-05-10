@@ -14,9 +14,9 @@
     width: 250px;
     height: auto;
     /* background: #042331; */
-    background: white;
+    background: #F5EEF8;
     transition: all .5s ease;
-    border:1px solid blueviolet;
+    /* border:1px solid blueviolet; */
     
   }
   .sidebar header {
@@ -25,9 +25,10 @@
     line-height: 40px;
     text-align: center;
     /* background: #063146; */
-    background: white;
+    background: #F5EEF8;
     user-select: none;
     border-bottom: 1px solid#B2BABB  ;
+    border-radius :5px;
  
   }
   .sidebar ul {
@@ -41,12 +42,9 @@
     font-size: 20px;
     color: black;
     padding-left: 40px;
-    /* padding-left: 120px; */
     box-sizing: border-box;
     border-bottom: 1px solid#B2BABB  ;
-    /* border-bottom: 1px solid blueviolet;
-    border-top: 1px solid rgba(156, 156, 156, 0.1); */
-    /* border:1px solid blueviolet; */
+    border-radius:5px;
     transition: .4s;
   }
   ul li:hover a{

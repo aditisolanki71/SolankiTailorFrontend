@@ -10,6 +10,7 @@
 	width: 80%;
 	max-width: 1200px;
 	margin: 0 auto;
+	background: #F5EEF8;
   }
   .section-header {
 	text-align: center;
@@ -24,6 +25,7 @@
   }
   /* feature boxes */
 .feature-box   {
+	background: #F5EEF8;
 	display: inline-block;
 	width: 33%;
 	padding: 20px 30px;

@@ -4,13 +4,10 @@ class Header extends React.Component {
     render() {
         return (
             <Fragment>
-                {/* header */}
                 <header>
-                {/* Logo */}
                 <a id="logo" href="index.html">
                     <img src="img/avatar.jpeg" alt="Logo"/>
                 </a>
-                 {/* main navigation links  */}
                  <nav>
                     <ul>
                         <li><a href="#">Sign Up</a></li>
@@ -18,8 +15,7 @@ class Header extends React.Component {
                     </ul>
                 </nav>
               </header>
-            </Fragment>
-        
+            </Fragment>    
         )};
 }
 export default Header;
