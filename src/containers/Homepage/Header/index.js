@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
-class Header extends Component {
+
+
+class HeaderPage extends Component {
   state = { activeItem: 'home' }
+
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
@@ -9,7 +12,8 @@ class Header extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu inverted>
+             <Menu inverted style={{ "justify-content": "flex-end"
+             }}>
         <Menu.Item
           name='home'
           active={activeItem === 'home'}
@@ -26,7 +30,7 @@ class Header extends Component {
           onClick={this.handleItemClick}
         />
       </Menu>
-    )
+)
   }
 }
-export default Header;
+export default HeaderPage;
