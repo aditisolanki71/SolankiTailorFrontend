@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './containers/Homepage/Header/index'
 import SidebarPage from './containers/Homepage/Sidebar/index'
+import Banner from './containers/Homepage/Banner/index'
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
 styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
@@ -12,6 +13,7 @@ class App extends React.Component {
     <div>
         <Header />
         <SidebarPage />
+        <Banner />
       </div>
    )};
 }
