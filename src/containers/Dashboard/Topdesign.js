@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import { Grid ,Image,Header} from 'semantic-ui-react'
 
-import img1 from '../../../public/images/img1.png'
-import img2 from '../../../public/images/img2.png'
-import img4 from '../../../public/images/img4.png'
+
+import img1 from './../../images/img1.jpg'
+import img2 from './../../images/img2.jpg'
+import img4 from './../../images/img4.jpg'
 class Topdesign extends Component {
   render() {
     return (

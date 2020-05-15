@@ -1,8 +1,6 @@
 import React from 'react'
 import { Header, Icon, Image, Menu, Segment, Sidebar ,Grid } from 'semantic-ui-react'
-
-import img1 from '../../../public/images/img1.png'
-
+import img1 from './../../images/img1.jpg'
 const SidebarPage = () => (
  
   <Sidebar.Pushable as={Segment} style={{"margin-top": "0px","border-radius": "0px"}}>
