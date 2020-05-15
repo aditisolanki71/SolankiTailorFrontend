@@ -12,7 +12,7 @@ class HeaderPage extends Component {
     const { activeItem } = this.state
 
     return (
-             <Menu inverted style={{ "justify-content": "flex-end"
+             <Menu inverted style={{ "justify-content": "flex-end","margin-bottom": "0px"
              }}>
         <Menu.Item
           name='home'

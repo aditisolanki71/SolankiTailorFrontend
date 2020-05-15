@@ -3,7 +3,7 @@ import { Header, Icon, Image, Menu, Segment, Sidebar ,Grid } from 'semantic-ui-r
 import img1 from '../images/img1.jpg'
 const SidebarPage = () => (
  
-  <Sidebar.Pushable as={Segment}>
+  <Sidebar.Pushable as={Segment} style={{"margin-top": "0px","border-radius": "0px"}}>
    <Grid celled='internally'>
    <Grid.Row>
       <Grid.Column width={3}>
