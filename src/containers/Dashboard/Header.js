@@ -24,7 +24,7 @@ class HeaderPage extends Component {
     const { activeItem } = this.state
 
     return (<Fragment>
-        <Segment clearing inverted style={{ "margin-bottom": "0px"}}>
+        <Segment clearing inverted style={{ "margin-bottom": "0px","background-color": "#00b5ad"}}>
        
     <Header as='h2' floated='left'>
     <FontAwesomeIcon
@@ -34,7 +34,7 @@ class HeaderPage extends Component {
       Float Left
     </Header>
     <Header as='h2' floated='right'>
-    <Menu inverted style={{ "justify-content": "flex-end","margin-bottom": "0px"}}>
+    <Menu inverted style={{ "justify-content": "flex-end","margin-bottom": "0px","background-color": "#00b5ad"}}>
         <Menu.Item
           name='home'
           active={activeItem === 'home'}

@@ -12,7 +12,7 @@ class Footer extends Component {
 //const { activeItem } = this.state
 
     return (
-        <div class="ui inverted black vertical footer segment">
+        <div class="ui inverted teal vertical footer segment">
         <div class="ui center aligned container">
             <h4 class="ui inverted header">&copy; Copyright 2017 | All rights reserved | Blahhh</h4>
             <a href="https://www.facebook.com/"><i class="facebook square icon big"></i></a>

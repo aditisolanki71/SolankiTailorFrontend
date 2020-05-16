@@ -8,6 +8,7 @@ const SidebarPage = () => (
    <Grid.Row>
       <Grid.Column width={3}>
     <Sidebar
+      style={{"background-color": "#00b5ad"}}
       as={Menu}
       animation='overlay'
       icon='labeled'
