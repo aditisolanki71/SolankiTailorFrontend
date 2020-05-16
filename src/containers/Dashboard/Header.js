@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Menu ,Header ,Segment} from 'semantic-ui-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import {  Link } from 'react-router';
+import { makeUrl } from './../../helpers/url-manager';
 class HeaderPage extends Component {
   state = { 
       activeItem: 'home' ,
@@ -49,16 +50,20 @@ class HeaderPage extends Component {
           active={activeItem === 'blog'}
           onClick={this.handleItemClick}
         /> 
+        <Link to={makeUrl('register')}>
         <Menu.Item
         name='register'
         active={activeItem === 'register'}
         onClick={this.handleItemClick}
       />
+      </Link>
+      <Link to={makeUrl('login')}>
        <Menu.Item
           name='login'
           active={activeItem === 'login'}
           onClick={this.handleItemClick}
         />
+        </Link>
       </Menu>
     </Header>
            

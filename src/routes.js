@@ -17,6 +17,20 @@ export default (hostName, pathName, cookie) => {
             loader: () => import('./containers/landing')
           })}
         />
+         <Route
+          path={getRoutePath('register')}
+          component={RouterLoader({
+            // loader: () => import('./containers/Register/register')
+            loader: () => import('./containers/Auth/register')
+          })}
+        />
+         <Route
+          path={getRoutePath('login')}
+          component={RouterLoader({
+            // loader: () => import('./containers/Register/register')
+            loader: () => import('./containers/Auth/login')
+          })}
+        />
        <Route component={App} path="/" />
     </Route>
   );
