@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {  Link } from 'react-router';
-// import { Button, Form, Message } from "semantic-ui-react";
-import { Form ,Button} from "semantic-ui-react";
+import { Button, Form, Message } from "semantic-ui-react";
 import Layout from "./layout";
 import { makeUrl } from '../../helpers/url-manager';
 
@@ -31,9 +30,9 @@ class Login extends Component {
           </Button>
         </Link>
 
-        {/* <Message size="big">
-          <Link to="/signup">Not Registered?</Link>
-        </Message> */}
+        <Message size="big">
+        <Link to={makeUrl('register')}>Not Registered?</Link>
+        </Message>
       </Layout>
     );
   }
