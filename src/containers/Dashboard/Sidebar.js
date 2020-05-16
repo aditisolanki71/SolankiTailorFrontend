@@ -32,6 +32,12 @@ const SidebarPage = () => (
         {/* blouse */}
         
       </Menu.Item>
+      <Menu.Item as='a'>
+        {/* <Icon name='camera' /> */}
+        FAQ
+        {/* blouse */}
+        
+      </Menu.Item>
     </Sidebar>
     </Grid.Column>
    
