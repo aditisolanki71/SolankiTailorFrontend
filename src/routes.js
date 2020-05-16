@@ -31,6 +31,13 @@ export default (hostName, pathName, cookie) => {
             loader: () => import('./containers/Auth/login')
           })}
         />
+         <Route
+          path={getRoutePath('contact')}
+          component={RouterLoader({
+            // loader: () => import('./containers/Register/register')
+            loader: () => import('./containers/Contact/contactus')
+          })}
+        />
        <Route component={App} path="/" />
     </Route>
   );

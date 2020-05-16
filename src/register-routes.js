@@ -5,3 +5,4 @@ registerUrl('landing', '/landing');
 registerUrl('register', '/signup');
 registerUrl('login', '/login');
 registerUrl('/', '/');
+registerUrl('contact', '/contact');
