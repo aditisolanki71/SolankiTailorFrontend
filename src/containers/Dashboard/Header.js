@@ -45,8 +45,18 @@ class HeaderPage extends Component {
           onClick={this.handleItemClick}
         />
         <Menu.Item
-          name='friends'
+          name='blog'
           active={activeItem === 'blog'}
+          onClick={this.handleItemClick}
+        /> 
+        <Menu.Item
+        name='register'
+        active={activeItem === 'register'}
+        onClick={this.handleItemClick}
+      />
+       <Menu.Item
+          name='login'
+          active={activeItem === 'login'}
           onClick={this.handleItemClick}
         />
       </Menu>

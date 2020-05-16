@@ -18,15 +18,19 @@ const SidebarPage = () => (
     >
       <Menu.Item as='a'>
         {/* <Icon name='home' /> */}
-        Home
+        Traditional
+        {/* choli,chaniyacholi,kurti */}
       </Menu.Item>
       <Menu.Item as='a'>
         {/* <Icon name='gamepad' /> */}
-        Games
+        Wastern
+        {/* gown */}
       </Menu.Item>
       <Menu.Item as='a'>
         {/* <Icon name='camera' /> */}
-        Channels
+        TopWear
+        {/* blouse */}
+        
       </Menu.Item>
     </Sidebar>
     </Grid.Column>
