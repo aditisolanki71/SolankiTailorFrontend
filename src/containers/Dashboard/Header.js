@@ -1,13 +1,24 @@
 import React, { Component, Fragment } from 'react'
 import { Menu ,Header ,Segment} from 'semantic-ui-react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class HeaderPage extends Component {
-  state = { activeItem: 'home' }
+  state = { 
+      activeItem: 'home' ,
+      isSidebarVisible: false
+    }
 
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  componentDidMount() {
+    console.log('did ',this.isSidebarVisible)
+  }
+  showSidebar = () => {   
+    console.log('sideebar',this.isSidebarVisible)
+    this.setState({ isSidebarVisible: true })
+    console.log('sidebar',this.isSidebarVisible)
+  }
   render() {
     const { activeItem } = this.state
 
@@ -15,6 +26,10 @@ class HeaderPage extends Component {
         <Segment clearing inverted style={{ "margin-bottom": "0px"}}>
        
     <Header as='h2' floated='left'>
+    <FontAwesomeIcon
+     icon="bars"
+     style={{"margin-right": "30px","margin-left" : "20px"}} 
+     onClick={this.showSidebar}/>
       Float Left
     </Header>
     <Header as='h2' floated='right'>
