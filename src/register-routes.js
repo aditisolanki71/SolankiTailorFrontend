@@ -6,3 +6,4 @@ registerUrl('register', '/signup');
 registerUrl('login', '/login');
 registerUrl('/', '/');
 registerUrl('contact', '/contact');
+registerUrl('blog', '/blog');

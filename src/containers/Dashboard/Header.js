@@ -48,11 +48,13 @@ class HeaderPage extends Component {
           onClick={this.handleItemClick}
         />
         </Link>
+        <Link to={makeUrl('blog')}>
         <Menu.Item
           name='blog'
           active={activeItem === 'blog'}
           onClick={this.handleItemClick}
         /> 
+        </Link>
         <Link to={makeUrl('register')}>
         <Menu.Item
         name='register'

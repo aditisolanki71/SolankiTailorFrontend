@@ -38,6 +38,13 @@ export default (hostName, pathName, cookie) => {
             loader: () => import('./containers/Contact/contactus')
           })}
         />
+         <Route
+          path={getRoutePath('blog')}
+          component={RouterLoader({
+            // loader: () => import('./containers/Register/register')
+            loader: () => import('./containers/Blog/Blogpage')
+          })}
+        />
        <Route component={App} path="/" />
     </Route>
   );
