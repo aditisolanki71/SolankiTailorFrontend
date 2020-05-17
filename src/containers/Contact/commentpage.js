@@ -13,21 +13,21 @@ class CommentPage extends Component {
                 icon="user"
                 iconPosition="left"
                 placeholder="Username"
-                className="auth-input-field"
+                className="contact-input-field"
               />
               <Form.Input
                 fluid
                 icon="envelope"
                 iconPosition="left"
                 placeholder="E-mail address"
-                className="auth-input-field"
+                className="contact-input-field"
               />
              <Form.Input
                 fluid
                 icon="phone"
                 iconPosition="left"
                 placeholder="Phone Number"
-                className="auth-input-field"
+                className="contact-input-field"
               />
               <Form>
               <TextArea placeholder='Tell us more' style={{ minHeight: 100 }} />

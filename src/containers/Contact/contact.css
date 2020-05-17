@@ -1,14 +1,14 @@
-.auth-main {
+.contact-main {
     height: 100vh;
     background-color: #eaeaea;
   }
   
-  .auth-content {
+  .contact-content {
     padding: 10vmin;
      text-align: left;
   }
   
-  .auth-card {
+  .contact-card {
     padding:30px;
     background-color: #ffffff;
     box-shadow: 3px 3px 8px #888888;
@@ -16,7 +16,7 @@
     text-align: left;
   }
 
-  .auth-form {
+  .contact-form {
     margin-top: 20px;
   }
 .contact-container {
@@ -26,7 +26,7 @@
   margin-bottom: 15px;
   border-radius: 5px;
 }
-.auth-input-field {
+.contact-input-field {
   font-size: 15px;
   margin-bottom: 15px;
 }

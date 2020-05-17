@@ -34,12 +34,14 @@ class HeaderPage extends Component {
     </Header>
     <Header as='h2' floated='right'>
     <Menu inverted style={{ "justify-content": "flex-end","margin-bottom": "0px","background-color": "#00b5ad"}}>
+        <Link to={makeUrl('/')}>
         <Menu.Item
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick}
         />
-         <Link to={makeUrl('contact')}>
+        </Link>
+        <Link to={makeUrl('contact')}>
         <Menu.Item
           name='contact'
           active={activeItem === 'contact'}
