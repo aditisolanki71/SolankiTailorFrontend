@@ -9,16 +9,15 @@ class HeaderPage extends Component {
       isSidebarVisible: false
     }
 
-
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   componentDidMount() {
-    console.log('did ',this.isSidebarVisible)
+    console.log('did ',this.state.isSidebarVisible)
   }
   showSidebar = () => {   
-    console.log('sideebar',this.isSidebarVisible)
+    console.log('sideebar',this.state.isSidebarVisible)
     this.setState({ isSidebarVisible: true })
-    console.log('sidebar',this.isSidebarVisible)
+    console.log('sidebar',this.state.isSidebarVisible)
   }
   render() {
     const { activeItem } = this.state
