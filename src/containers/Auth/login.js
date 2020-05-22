@@ -3,7 +3,7 @@ import {  Link } from 'react-router';
 import { Button, Form,Input, Message } from "semantic-ui-react";
 import Layout from "./layout";
 import { makeUrl } from '../../helpers/url-manager';
-import loginApi from './../../redux/modules/auth/api'
+import {loginApi} from './../../redux/modules/auth/api'
 class Login extends Component {
   state = {
     data: {}
