@@ -16,7 +16,6 @@ class Signup extends Component {
     )
   }
   handleSubmit = e => {
-    debugger;
     e.preventDefault();
     console.log('hello submit')
     const userObj = { ...this.state.data };
@@ -66,12 +65,21 @@ class Signup extends Component {
           />
           <Input
             fluid
+            icon="user"
+            iconPosition="left"
+            placeholder="Address"
+            className="auth-input-field"
+            value={data.address}
+            onChange= {e => this.handleChange({ address : e.target.value})}
+          />
+          <Input
+            fluid
             icon="envelope"
             iconPosition="left"
             placeholder="E-mail address"
             className="auth-input-field"
-            value={data.password}
-            onChange= {e => this.handleChange({ password : e.target.value})}
+            value={data.email}
+            onChange= {e => this.handleChange({ email : e.target.value})}
           />
          <Input
             fluid
@@ -79,8 +87,8 @@ class Signup extends Component {
             iconPosition="left"
             placeholder="Phone Number"
             className="auth-input-field"
-            value={data.email}
-            onChange= {e => this.handleChange({ email : e.target.value})}
+            value={data.contactNo}
+            onChange= {e => this.handleChange({ contactNo : e.target.value})}
           />
           <Input
             fluid
@@ -89,8 +97,8 @@ class Signup extends Component {
             placeholder="Password"
             type="password"
             className="auth-input-field"
-            value={data.address}
-            onChange= {e => this.handleChange({ address : e.target.value})}
+            value={data.password}
+            onChange= {e => this.handleChange({ password : e.target.value})}
           />
           <Input
             fluid
@@ -99,8 +107,8 @@ class Signup extends Component {
             placeholder="Confirm Password"
             type="password"
             className="auth-input-field"
-            value={data.contactNo}
-            onChange= {e => this.handleChange({ contactNo : e.target.value})}
+            value={data.password}
+            onChange= {e => this.handleChange({ password : e.target.value})}
           />
   
           <Button color="teal" fluid size="huge">
