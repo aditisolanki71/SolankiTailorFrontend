@@ -6,7 +6,9 @@ import RouterLoader from './components/router-loader';
 import './register-routes';
 
 //file-2
-export default (hostName, pathName, cookie) => {
+export default (store,client,hostName, pathName, cookie) => {
+  console.log('inside routes.js',store);
+  console.log('client',client)
   let component;
   console.log('hello',getRoutePath('landing'))
   component = (

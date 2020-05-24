@@ -1,13 +1,16 @@
 import React from 'react';
+import { Router, browserHistory, match } from 'react-router';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux' 
-import { Router, browserHistory, match } from 'react-router';
-import './font-awesome.js';
 import getroutes from './routes';
 import store, { apiClient } from './redux';
+import DataFetchingScheduler from './redux/data-dispatcher/data-fetcher'
+import './font-awesome.js';
+
 
 window.__API__ = apiClient;
-//window.__SCHEDULER__ = new DataFetchingScheduler(store);
+
+window.__SCHEDULER__ = new DataFetchingScheduler(store);
 const mountNode = document.getElementById('content');
 //file-1
 const render = routes => {

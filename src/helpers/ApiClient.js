@@ -1,6 +1,6 @@
 //import moment from 'moment';
 import superagent from 'superagent';
-import { notify } from 'react-notify-toast';
+//import { notify } from 'react-notify-toast';
 import { browserHistory } from 'react-router';
 //import { setToken, logout } from 'redux/modules/auth';
 // import {
@@ -13,7 +13,7 @@ import HttpRequestQueue from './http-request-queue';
 // import TokenManager from './token-manager';
 //import { removeUserAuthData } from './index';
 
-const showNotification = notify.createShowQueue();
+//const showNotification = notify.createShowQueue();
 // delay in milliseconds to wait before showing the loader
 const LoaderDelay = 700;
 
@@ -24,12 +24,14 @@ const RequestQueue = new HttpRequestQueue();
 // const TokenHelper = new TokenManager(localStore);
 
 function formatUrl(path) {
+  console.log('path')
   let adjustedPath;
   if (/https?/.test(path)) {
     adjustedPath = path;
   } else {
     adjustedPath = path[0] !== '/' ? `/${path}` : path;
   }
+  console.log('adjystpath',adjustedPath)
   return adjustedPath;
 }
 
@@ -41,47 +43,46 @@ function formatUrl(path) {
 //   }
 // };
 
-// eslint-disable-next-line
-// const AuthIntercept = (apiClient, requestOptions) =>
-//   require('superagent-intercept')((err, response) => {
-//     if (requestOptions.clientHandledError === true) {
-//       return true;
-//     }
-//     if (
-//       response &&
-//       (response.status === 400 ||
-//         response.status === 500 ||
-//         (response.status === 401 && response.body.error === 'invalid_token'))
-//     ) {
-//       if (
-//         response.body.userMessage === 'User is not authenticated.' ||
-//         response.body.error === 'invalid_token'
-//       ) {
-//         logoutUser(apiClient.store);
-//         if (!requestOptions.redirectToLogin !== false) {
-//           window.location.href = '/login?logoutParm=motadata';
-//         }
-//       }
-//       try {
-//         showNotification(
-//           response.body.userMessage ||
-//             `${response.status} - 
-//         internal server error`,
-//           'error'
-//         );
-//       } catch (e) {
-//         console.log(e);
-//       }
-//     } else if (
-//       response &&
-//       [404, 502].indexOf(response.status) >= 0 &&
-//       response.headers['content-type'] === 'text/html' &&
-//       process.env.NODE_ENV !== 'development'
-//     ) {
-//       // can't connect to server
-//       browserHistory.push('/noserver');
-//     }
-//   });
+const AuthIntercept = (apiClient, requestOptions) =>
+  require('superagent-intercept')((err, response) => {
+    if (requestOptions.clientHandledError === true) {
+      return true;
+    }
+    if (
+      response &&
+      (response.status === 400 ||
+        response.status === 500 ||
+        (response.status === 401 && response.body.error === 'invalid_token'))
+    ) {
+      // if (
+      //   response.body.userMessage === 'User is not authenticated.' ||
+      //   response.body.error === 'invalid_token'
+      // ) {
+      //   logoutUser(apiClient.store);
+      //   if (!requestOptions.redirectToLogin !== false) {
+      //     window.location.href = '/login?logoutParm=motadata';
+      //   }
+      // }
+      // try {
+      //   showNotification(
+      //     response.body.userMessage ||
+      //       `${response.status} - 
+      //   internal server error`,
+      //     'error'
+      //   );
+      // } catch (e) {
+      //   console.log(e);
+      // }
+    } else if (
+      response &&
+      [404, 502].indexOf(response.status) >= 0 &&
+      response.headers['content-type'] === 'text/html' &&
+      process.env.NODE_ENV !== 'development'
+    ) {
+      // can't connect to server
+      browserHistory.push('/noserver');
+    }
+  });
 
 // const IsUnSecureRequest = url =>
 //   url.indexOf('ususer') >= 0 ||
@@ -91,30 +92,40 @@ function formatUrl(path) {
 
 let totalRequests = 0;
 
+
 export default class ApiClient {
   constructor() {
+    console.log('inside apiclient methods',methods)
+ 
     methods.forEach(method => {
+      console.log('meth',this[methods])
       this[method] = (
         path,
         { params, data, headers, files, fields, form, ...args } = {}
       ) =>
         new Promise((resolve, reject) => {
           const url = formatUrl(path);
+          console.log('url is',url)
           const request = superagent[method](url);
+          console.log('request',request)
 
           if (params) {
+            console.log('params',params)
             request.query(params);
           }
 
           if (headers) {
+            console.log('headers',headers)
             request.set(headers);
           }
 
           if (form) {
+            console.log('form',form)
             request.type('form');
           }
 
           if (files) {
+            console.log('files',files)
             files.forEach(file => request.attach(file.key, file.value));
             request.on('progress', e => {
               const div = document.getElementById('global-loader-message');
@@ -125,22 +136,26 @@ export default class ApiClient {
           }
 
           if (fields) {
+            console.log('fields',fields)
             fields.forEach(item => request.field(item.key, item.value));
           }
 
           if (data) {
+            console.log('data is',data)
             request.send(data);
           }
 
-        //   request.use(AuthIntercept(this, args));
-
+           request.use(AuthIntercept(this, args));
+          console.log('reqqq',request)
           if (args.responseType) {
+            console.log('args.res',args.responseType)
             request.responseType(args.responseType);
           }
-
+          console.log('req',request)
           request.execute = () => {
             // show loader only if loader is not false along with request options
             if (args.loader !== false) {
+              console.log('argsloader',args.loader)
               totalRequests++;
             //   if (!isLoaderVisible()) {
             //     //showLoader(LoaderDelay);
@@ -161,18 +176,18 @@ export default class ApiClient {
                  // hideLoader();
                 }
               }
-              if (
-                !err &&
-                ['POST', 'PUT', 'DELETE'].indexOf(response.req.method) >= 0 &&
-                args.notify !== false
-              ) {
-                showNotification(
-                  args.message ||
-                   'the operation has been completed',
-                  'success',
-                  2000
-                );
-              }
+              // if (
+              //   !err &&
+              //   ['POST', 'PUT', 'DELETE'].indexOf(response.req.method) >= 0 &&
+              //   args.notify !== false
+              // ) {
+              //   showNotification(
+              //     args.message ||
+              //      'the operation has been completed',
+              //     'success',
+              //     2000
+              //   );
+              // }
               return err
                 ? reject(
                   args.fullResponse
@@ -208,6 +223,7 @@ export default class ApiClient {
         //   } else {
         //     request.execute();
         //   }
+        request.execute();
         });
     });
   }

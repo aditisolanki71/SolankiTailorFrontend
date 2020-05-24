@@ -13,11 +13,8 @@ export const loginApi = data  => {
     })
 }
 
-export const registerApi = dataobj => {
-    
-    debugger;
-    console.log('hey',window.__API___.post(urls.REGISTER))
+export const registerApi = dataobj => 
     window.__API__.post(urls.REGISTER, {
                 data: dataobj
     });
-}
+
