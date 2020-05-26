@@ -15,7 +15,9 @@ class Login extends Component {
     console.log('userobj',userObj)
     loginApi(userObj).then(response => {
       console.log('response is',response)
+      return response;
     })
+    
   };
 
   handleChange = change => {
@@ -39,7 +41,7 @@ class Login extends Component {
           fluid
           icon="user"
           iconPosition="left"
-          placeholder="E-mail address"
+          placeholder="Username"
           value={data.username}
           onChange= {e => this.handleChange({ username : e.target.value})}
         />
