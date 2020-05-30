@@ -28,8 +28,11 @@
     "superagent-intercept": "^0.1.2"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
     "less": "^2.7.2",
-    "nwb-less": "^0.7.0"
+    "nwb-less": "^0.7.0",
+    "prettier": "^2.0.5"
   },
   "proxy": "http://localhost:8080",
   "scripts": {
