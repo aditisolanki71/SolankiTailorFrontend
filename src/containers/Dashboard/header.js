@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Menu, Header, Segment } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
-import { makeUrl } from "./../../helpers/url-manager";
+import { makeUrl } from "../../helpers/url-manager";
 class HeaderPage extends Component {
   state = {
     activeItem: "home",

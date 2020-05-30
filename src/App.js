@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./containers/Dashboard/Header";
-import SidebarPage from "./containers/Dashboard/Sidebar";
-import Banner from "./containers/Dashboard/Banner";
-import Topdesign from "./containers/Dashboard/Topdesign";
-import Blog from "./containers/Dashboard/Blog";
-import Footer from "./containers/Dashboard/Footer";
+import Header from "./containers/Dashboard/header";
+import SidebarPage from "./containers/Dashboard/sidebar";
+import Banner from "./containers/Dashboard/banner";
+import Topdesign from "./containers/Dashboard/top-design";
+import Testimonial from "./containers/Dashboard/testimonial";
+import Footer from "./containers/Dashboard/footer";
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
 styleLink.href =
@@ -19,7 +19,7 @@ class App extends React.Component {
         <SidebarPage />
         <Banner />
         <Topdesign />
-        <Blog />
+        <Testimonial />
         <Footer />
       </div>
     );

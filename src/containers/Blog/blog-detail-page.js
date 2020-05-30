@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Grid, Image, Header, Icon, Label } from "semantic-ui-react";
-import HeaderPage from "../Dashboard/Header";
-import Footer from "../Dashboard/Footer";
+import HeaderPage from "../Dashboard/header";
+import Footer from "../Dashboard/footer";
 import img1 from "./../../images/img1.jpg";
 
 class BlogDetailPage extends Component {

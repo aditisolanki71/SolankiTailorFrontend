@@ -37,14 +37,14 @@ export default (store, client, hostName, pathName, cookie) => {
         path={getRoutePath("contact")}
         component={RouterLoader({
           // loader: () => import('./containers/Register/register')
-          loader: () => import("./containers/Contact/contactus"),
+          loader: () => import("./containers/Contact/contact-us"),
         })}
       />
       <Route
         path={getRoutePath("blog")}
         component={RouterLoader({
           // loader: () => import('./containers/Register/register')
-          loader: () => import("./containers/Blog/Blogpage"),
+          loader: () => import("./containers/Blog/blog-page"),
         })}
       />
       <Route

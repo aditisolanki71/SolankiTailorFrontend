@@ -3,7 +3,7 @@ import { Grid, Image, Header } from "semantic-ui-react";
 import img1 from "./../../images/img1.jpg";
 import img2 from "./../../images/img2.jpg";
 import img4 from "./../../images/img4.jpg";
-class Blog extends Component {
+class Testimonial extends Component {
   render() {
     return (
       <Fragment>
@@ -87,4 +87,4 @@ class Blog extends Component {
     );
   }
 }
-export default Blog;
+export default Testimonial;
