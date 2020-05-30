@@ -1,5 +1,5 @@
-import UrlRegistery from './url-registery';
-import UrlMaker from './url-maker';
+import UrlRegistery from "./url-registery";
+import UrlMaker from "./url-maker";
 
 const registery = new UrlRegistery();
 const maker = new UrlMaker(registery);

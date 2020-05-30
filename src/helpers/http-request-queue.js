@@ -1,14 +1,14 @@
 class HttpRequestQueue {
-    requests = [];
-  
-    push(request) {
-      this.requests.push(request);
-    }
-  
-    processAll() {
-      this.requests.map(r => r.execute());
-      this.requests = [];
-    }
+  requests = [];
+
+  push(request) {
+    this.requests.push(request);
   }
-  
-  export default HttpRequestQueue;
+
+  processAll() {
+    this.requests.map((r) => r.execute());
+    this.requests = [];
+  }
+}
+
+export default HttpRequestQueue;

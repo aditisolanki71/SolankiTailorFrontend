@@ -1,7 +1,7 @@
 //import moment from 'moment';
-import superagent from 'superagent';
+import superagent from "superagent";
 //import { notify } from 'react-notify-toast';
-import { browserHistory } from 'react-router';
+import { browserHistory } from "react-router";
 //import { setToken, logout } from 'redux/modules/auth';
 // import {
 //   showLoader,
@@ -9,7 +9,7 @@ import { browserHistory } from 'react-router';
 //   isLoaderVisible
 // } from '../components/utils/loader';
 // import localStore from './localstore';
-import HttpRequestQueue from './http-request-queue';
+import HttpRequestQueue from "./http-request-queue";
 // import TokenManager from './token-manager';
 //import { removeUserAuthData } from './index';
 
@@ -17,21 +17,21 @@ import HttpRequestQueue from './http-request-queue';
 // delay in milliseconds to wait before showing the loader
 const LoaderDelay = 700;
 
-const methods = ['get', 'post', 'put', 'patch', 'del'];
+const methods = ["get", "post", "put", "patch", "del"];
 
 const RequestQueue = new HttpRequestQueue();
 
 // const TokenHelper = new TokenManager(localStore);
 
 function formatUrl(path) {
-  console.log('path')
+  console.log("path");
   let adjustedPath;
   if (/https?/.test(path)) {
     adjustedPath = path;
   } else {
-    adjustedPath = path[0] !== '/' ? `/${path}` : path;
+    adjustedPath = path[0] !== "/" ? `/${path}` : path;
   }
-  console.log('adjystpath',adjustedPath)
+  console.log("adjystpath", adjustedPath);
   return adjustedPath;
 }
 
@@ -44,7 +44,7 @@ function formatUrl(path) {
 // };
 
 const AuthIntercept = (apiClient, requestOptions) =>
-  require('superagent-intercept')((err, response) => {
+  require("superagent-intercept")((err, response) => {
     if (requestOptions.clientHandledError === true) {
       return true;
     }
@@ -52,7 +52,7 @@ const AuthIntercept = (apiClient, requestOptions) =>
       response &&
       (response.status === 400 ||
         response.status === 500 ||
-        (response.status === 401 && response.body.error === 'invalid_token'))
+        (response.status === 401 && response.body.error === "invalid_token"))
     ) {
       // if (
       //   response.body.userMessage === 'User is not authenticated.' ||
@@ -66,7 +66,7 @@ const AuthIntercept = (apiClient, requestOptions) =>
       // try {
       //   showNotification(
       //     response.body.userMessage ||
-      //       `${response.status} - 
+      //       `${response.status} -
       //   internal server error`,
       //     'error'
       //   );
@@ -76,11 +76,11 @@ const AuthIntercept = (apiClient, requestOptions) =>
     } else if (
       response &&
       [404, 502].indexOf(response.status) >= 0 &&
-      response.headers['content-type'] === 'text/html' &&
-      process.env.NODE_ENV !== 'development'
+      response.headers["content-type"] === "text/html" &&
+      process.env.NODE_ENV !== "development"
     ) {
       // can't connect to server
-      browserHistory.push('/noserver');
+      browserHistory.push("/noserver");
     }
   });
 
@@ -92,43 +92,42 @@ const AuthIntercept = (apiClient, requestOptions) =>
 
 let totalRequests = 0;
 
-
 export default class ApiClient {
   constructor() {
-    console.log('inside apiclient methods',methods)
- 
-    methods.forEach(method => {
-      console.log('meth',this[methods])
+    console.log("inside apiclient methods", methods);
+
+    methods.forEach((method) => {
+      console.log("meth", this[methods]);
       this[method] = (
         path,
         { params, data, headers, files, fields, form, ...args } = {}
       ) =>
         new Promise((resolve, reject) => {
           const url = formatUrl(path);
-          console.log('url is',url)
+          console.log("url is", url);
           const request = superagent[method](url);
-          console.log('request',request)
+          console.log("request", request);
 
           if (params) {
-            console.log('params',params)
+            console.log("params", params);
             request.query(params);
           }
 
           if (headers) {
-            console.log('headers',headers)
+            console.log("headers", headers);
             request.set(headers);
           }
 
           if (form) {
-            console.log('form',form)
-            request.type('form');
+            console.log("form", form);
+            request.type("form");
           }
 
           if (files) {
-            console.log('files',files)
-            files.forEach(file => request.attach(file.key, file.value));
-            request.on('progress', e => {
-              const div = document.getElementById('global-loader-message');
+            console.log("files", files);
+            files.forEach((file) => request.attach(file.key, file.value));
+            request.on("progress", (e) => {
+              const div = document.getElementById("global-loader-message");
               if (div) {
                 div.innerHTML = `Uploading ${Math.ceil(e.percent)}%`;
               }
@@ -136,30 +135,30 @@ export default class ApiClient {
           }
 
           if (fields) {
-            console.log('fields',fields)
-            fields.forEach(item => request.field(item.key, item.value));
+            console.log("fields", fields);
+            fields.forEach((item) => request.field(item.key, item.value));
           }
 
           if (data) {
-            console.log('data is',data)
+            console.log("data is", data);
             request.send(data);
           }
 
-           request.use(AuthIntercept(this, args));
-          console.log('reqqq',request)
+          request.use(AuthIntercept(this, args));
+          console.log("reqqq", request);
           if (args.responseType) {
-            console.log('args.res',args.responseType)
+            console.log("args.res", args.responseType);
             request.responseType(args.responseType);
           }
-          console.log('req',request)
+          console.log("req", request);
           request.execute = () => {
             // show loader only if loader is not false along with request options
             if (args.loader !== false) {
-              console.log('argsloader',args.loader)
+              console.log("argsloader", args.loader);
               totalRequests++;
-            //   if (!isLoaderVisible()) {
-            //     //showLoader(LoaderDelay);
-            //   }
+              //   if (!isLoaderVisible()) {
+              //     //showLoader(LoaderDelay);
+              //   }
             }
             // if (localStore.getItem('token') && localStore.getItem('token')) {
             //   if (!(headers || {}).Authorization) {
@@ -173,7 +172,7 @@ export default class ApiClient {
               if (args.loader !== false) {
                 totalRequests--;
                 if (totalRequests === 0) {
-                 // hideLoader();
+                  // hideLoader();
                 }
               }
               // if (
@@ -190,47 +189,47 @@ export default class ApiClient {
               // }
               return err
                 ? reject(
-                  args.fullResponse
-                    ? { body: body || err, ...response }
-                    : body || err
-                )
+                    args.fullResponse
+                      ? { body: body || err, ...response }
+                      : body || err
+                  )
                 : resolve(args.fullResponse ? { body, ...response } : body);
             });
           };
           // execute request if can be proceed. else push it in queue(in case refresh token is required)
-        //   if (
-        //     !IsUnSecureRequest(url) &&
-        //     localStore.getItem('expires_at') &&
-        //     moment().unix() > +localStore.getItem('expires_at')
-        //   ) {
-        //     // get refresh token here because actual token is expired.
-        //     RequestQueue.push(request);
-        //     const promise = TokenHelper.renewToken();
-        //     if (promise) {
-        //       promise
-        //         .then(response => {
-        //           if (this.store) {
-        //             this.store.dispatch(setToken(response.access_token));
-        //           }
-        //           RequestQueue.processAll();
-        //         })
-        //         .catch(() => {
-        //           // if unable to refresh the token send user to login screen.
-        //           logoutUser(this.store);
-        //           window.location.href = '/login?logoutParm=motadata';
-        //         });
-        //     }
-        //   } else {
-        //     request.execute();
-        //   }
-        request.execute();
+          //   if (
+          //     !IsUnSecureRequest(url) &&
+          //     localStore.getItem('expires_at') &&
+          //     moment().unix() > +localStore.getItem('expires_at')
+          //   ) {
+          //     // get refresh token here because actual token is expired.
+          //     RequestQueue.push(request);
+          //     const promise = TokenHelper.renewToken();
+          //     if (promise) {
+          //       promise
+          //         .then(response => {
+          //           if (this.store) {
+          //             this.store.dispatch(setToken(response.access_token));
+          //           }
+          //           RequestQueue.processAll();
+          //         })
+          //         .catch(() => {
+          //           // if unable to refresh the token send user to login screen.
+          //           logoutUser(this.store);
+          //           window.location.href = '/login?logoutParm=motadata';
+          //         });
+          //     }
+          //   } else {
+          //     request.execute();
+          //   }
+          request.execute();
         });
     });
   }
 
-//   setToken(token) {
-//     this.token = token;
-//   }
+  //   setToken(token) {
+  //     this.token = token;
+  //   }
 
   setStore(store) {
     this.store = store;
