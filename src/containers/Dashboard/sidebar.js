@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Header,
-  Icon,
-  Image,
-  Menu,
-  Segment,
-  Sidebar,
-  Grid,
-} from "semantic-ui-react";
+import { Header, Image, Menu, Segment, Sidebar, Grid } from "semantic-ui-react";
 import img1 from "./../../images/img1.jpg";
 const SidebarPage = () => (
   <Sidebar.Pushable

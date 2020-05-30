@@ -9,17 +9,17 @@ import { browserHistory } from "react-router";
 //   isLoaderVisible
 // } from '../components/utils/loader';
 // import localStore from './localstore';
-import HttpRequestQueue from "./http-request-queue";
+//import HttpRequestQueue from "./http-request-queue";
 // import TokenManager from './token-manager';
 //import { removeUserAuthData } from './index';
 
 //const showNotification = notify.createShowQueue();
 // delay in milliseconds to wait before showing the loader
-const LoaderDelay = 700;
+//const LoaderDelay = 700;
 
 const methods = ["get", "post", "put", "patch", "del"];
 
-const RequestQueue = new HttpRequestQueue();
+//const RequestQueue = new HttpRequestQueue();
 
 // const TokenHelper = new TokenManager(localStore);
 
