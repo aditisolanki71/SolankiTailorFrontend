@@ -1,6 +1,5 @@
-
 //file-3
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 class LandingPage extends React.Component {
   render() {
     return (
