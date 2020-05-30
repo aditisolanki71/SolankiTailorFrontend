@@ -1,5 +1,9 @@
-import { dataActions, RefreshActionKeysMap, OneTimeActions } from './data-actions';
-import urls from '../service-urls';
+import {
+  dataActions,
+  RefreshActionKeysMap,
+  OneTimeActions,
+} from "./data-actions";
+import urls from "../service-urls";
 const refreshCheckTimeout = 4 * 60 * 1000; // time in milliseconds
 
 export default class DataFetcher {
@@ -13,15 +17,22 @@ export default class DataFetcher {
 
   _startRefreshInterval() {
     this.shouldRefreshInterval = setInterval(() => {
-      window.__API__.get(`${urls.SHOULDREFRESH}`).then(response => {
+      window.__API__.get(`${urls.SHOULDREFRESH}`).then((response) => {
         if (response.requireRefresh) {
-          if (!Array.isArray(response.resourceSet) || response.resourceSet.length === 0) {
+          if (
+            !Array.isArray(response.resourceSet) ||
+            response.resourceSet.length === 0
+          ) {
             return this.scheduleAll();
           }
-          response.resourceSet.forEach(key => {
+          response.resourceSet.forEach((key) => {
             if (RefreshActionKeysMap[key]) {
               return RefreshActionKeysMap[key].reduce(
-                (p, k) => p.then(() => this._scheduleAction(k), () => this._scheduleAction(k)),
+                (p, k) =>
+                  p.then(
+                    () => this._scheduleAction(k),
+                    () => this._scheduleAction(k)
+                  ),
                 Promise.resolve()
               );
             }
@@ -33,16 +44,19 @@ export default class DataFetcher {
   }
 
   scheduleAll() {
-    const executePromiseSequence = promises =>
-      promises.reduce((promise, promiseFunc) => promise.then(promiseFunc).catch(promiseFunc), Promise.resolve());
+    const executePromiseSequence = (promises) =>
+      promises.reduce(
+        (promise, promiseFunc) => promise.then(promiseFunc).catch(promiseFunc),
+        Promise.resolve()
+      );
     const allPromises = Object.keys(dataActions)
-      .map(actionName => () => {
+      .map((actionName) => () => {
         if (OneTimeActions.indexOf(actionName) >= 0) {
           return null;
         }
         return this._scheduleAction(actionName);
       })
-      .filter(f => f);
+      .filter((f) => f);
     executePromiseSequence(allPromises);
     if (!this.shouldRefreshInterval) {
       this._startRefreshInterval();
