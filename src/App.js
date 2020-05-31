@@ -6,6 +6,7 @@ import Topdesign from "./containers/Dashboard/top-design";
 import Testimonial from "./containers/Dashboard/testimonial";
 import Footer from "./containers/Dashboard/footer";
 import { listApi as allMainCategory } from "./redux/modules/main-category";
+import { listApi as allTestimonial } from "./redux/modules/testimonial";
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
 styleLink.href =
@@ -17,14 +18,21 @@ class App extends React.Component {
     super(props);
     this.state = {
       mainCategoryList: [],
+      testimonialList: [],
     };
   }
   componentWillMount() {
     this.fetchMainCategoryData();
+    this.fetchTestimonialData();
   }
   fetchMainCategoryData() {
     return allMainCategory().then((data) => {
       this.setState({ mainCategoryList: data });
+    });
+  }
+  fetchTestimonialData() {
+    return allTestimonial().then((data) => {
+      this.setState({ testimonialList: data });
     });
   }
   render() {
@@ -34,7 +42,7 @@ class App extends React.Component {
         <SidebarPage />
         <Banner list={this.state.mainCategoryList} />
         <Topdesign />
-        <Testimonial />
+        <Testimonial list={this.state.testimonialList} />
         <Footer />
       </div>
     );
