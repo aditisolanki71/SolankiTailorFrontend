@@ -5,6 +5,7 @@ import Banner from "./containers/Dashboard/banner";
 import Topdesign from "./containers/Dashboard/top-design";
 import Testimonial from "./containers/Dashboard/testimonial";
 import Footer from "./containers/Dashboard/footer";
+import { listApi as allMainCategory } from "./redux/modules/main-category";
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
 styleLink.href =
@@ -12,12 +13,26 @@ styleLink.href =
 document.head.appendChild(styleLink);
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mainCategoryList: [],
+    };
+  }
+  componentWillMount() {
+    this.fetchMainCategoryData();
+  }
+  fetchMainCategoryData() {
+    return allMainCategory().then((data) => {
+      this.setState({ mainCategoryList: data });
+    });
+  }
   render() {
     return (
       <div>
         <Header />
         <SidebarPage />
-        <Banner />
+        <Banner list={this.state.mainCategoryList} />
         <Topdesign />
         <Testimonial />
         <Footer />

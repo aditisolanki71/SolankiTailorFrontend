@@ -7,18 +7,18 @@ import img4 from "./../../images/img4.jpg";
 
 class Banner extends Component {
   render() {
+    const { list } = this.props;
     return (
       <Grid>
         <Grid.Row columns={3}>
-          <Grid.Column>
-            <Image src={img1} height={"350px"} width={"350px"} />
-          </Grid.Column>
-          <Grid.Column>
-            <Image src={img2} height={"350px"} width={"350px"} />
-          </Grid.Column>
-          <Grid.Column>
-            <Image src={img4} height={"350px"} width={"350px"} />
-          </Grid.Column>
+          {(list || []).length > 0
+            ? list.map((item, index) => (
+                <Grid.Column key={index}>
+                  <p>{item.name}</p>
+                  <Image src={img2} height={"350px"} width={"350px"} />
+                </Grid.Column>
+              ))
+            : "no data found"}
         </Grid.Row>
       </Grid>
     );
