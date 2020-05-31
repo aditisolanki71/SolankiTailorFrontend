@@ -10,7 +10,10 @@ class Footer extends Component {
     //const { activeItem } = this.state
 
     return (
-      <div class="ui inverted teal vertical footer segment">
+      <div
+        class="ui inverted teal vertical footer segment"
+        style={{ position: "sticky", left: "0", bottom: "0", width: "100%" }}
+      >
         <div class="ui center aligned container">
           <h4 class="ui inverted header">
             &copy; Copyright 2017 | All rights reserved | Blahhh
