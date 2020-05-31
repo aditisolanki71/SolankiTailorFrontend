@@ -62,7 +62,7 @@ class Login extends Component {
           {/* </Link> */}
 
           <Message size="big">
-            <Link to={makeUrl("login")}>Not Registered?</Link>
+            <Link to={makeUrl("register")}>Not Registered?</Link>
           </Message>
         </Form>
       </Layout>

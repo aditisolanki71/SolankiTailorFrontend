@@ -54,6 +54,13 @@ export default (store, client, hostName, pathName, cookie) => {
           loader: () => import("./containers/Blog/blog-detail-page"),
         })}
       />
+      <Route
+        path={getRoutePath("faq-page")}
+        component={RouterLoader({
+          // loader: () => import('./containers/Register/register')
+          loader: () => import("./containers/FAQ/faq-page"),
+        })}
+      />
       <Route component={App} path="/" />
     </Route>
   );

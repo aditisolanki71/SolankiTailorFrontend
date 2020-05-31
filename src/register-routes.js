@@ -8,3 +8,4 @@ registerUrl("/", "/");
 registerUrl("contact", "/contact");
 registerUrl("blog", "/blog");
 registerUrl("blog-detail", "/blog-detail");
+registerUrl("faq-page", "/faq");
