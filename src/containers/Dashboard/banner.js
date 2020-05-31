@@ -10,15 +10,22 @@ class Banner extends Component {
     const { list } = this.props;
     return (
       <Grid>
-        <Grid.Row columns={3}>
+        <Grid.Row>
+          <Grid.Column width={2}></Grid.Column>
           {(list || []).length > 0
             ? list.map((item, index) => (
-                <Grid.Column key={index}>
-                  <p>{item.name}</p>
-                  <Image src={img2} height={"350px"} width={"350px"} />
+                <Grid.Column key={index} width={4} style={{ padding: "20px" }}>
+                  <p style={{ textAlign: "center" }}>{item.name}</p>
+                  <Image
+                    src={img2}
+                    height={"300px"}
+                    width={"350px"}
+                    style={{ borderRadius: "10px" }}
+                  />
                 </Grid.Column>
               ))
             : "no data found"}
+          <Grid.Column width={2}></Grid.Column>
         </Grid.Row>
       </Grid>
     );

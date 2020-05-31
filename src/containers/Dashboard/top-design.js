@@ -12,21 +12,21 @@ class Topdesign extends Component {
           Top Design
         </Header>
         <Grid>
-          <Grid.Row columns={5}>
+          <Grid.Row columns={5} style={{ paddingLeft: "15px" }}>
             <Grid.Column>
-              <Image src={img1} />
+              <Image src={img1} height={"300px"} width={"350px"} />
             </Grid.Column>
             <Grid.Column>
-              <Image src={img2} />
+              <Image src={img2} height={"300px"} width={"350px"} />
             </Grid.Column>
             <Grid.Column>
-              <Image src={img4} />
+              <Image src={img4} height={"300px"} width={"350px"} />
             </Grid.Column>
             <Grid.Column>
-              <Image src={img1} />
+              <Image src={img1} height={"300px"} width={"350px"} />
             </Grid.Column>
             <Grid.Column>
-              <Image src={img2} />
+              <Image src={img2} height={"300px"} width={"350px"} />
             </Grid.Column>
           </Grid.Row>
         </Grid>
