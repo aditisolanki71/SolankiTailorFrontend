@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Accordion, Icon } from "semantic-ui-react";
-//import FAQItem from "./faq-item";
 
 class FAQList extends Component {
   state = { activeIndex: 0 };
