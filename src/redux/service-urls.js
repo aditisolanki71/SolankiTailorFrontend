@@ -3,4 +3,5 @@ export default {
   REGISTER: "/register",
   ALLMAINCATEGORY: "/maincategory",
   ALLTESTIMONIAL: "/testimonial",
+  ALLBLOG: "/blog",
 };
