@@ -5,8 +5,6 @@ import Footer from "../Dashboard/footer";
 import FAQList from "./faq-list";
 import { listApi as allFaq } from "./../../redux/modules/faq";
 // import img1 from "./../../images/img1.jpg";
-// import img2 from "./../../images/img2.jpg";
-// import img4 from "./../../images/img4.jpg";
 const panes = [
   {
     menuItem: "Tab 1",
@@ -33,16 +31,13 @@ class FAQPage extends Component {
       faqlist: [],
     };
   }
-  data() {
-    console.log("data");
-  }
+
   componentWillMount() {
     this.fetchFaqData();
   }
   fetchFaqData() {
     return allFaq().then((data) => {
       this.setState({ faqlist: data });
-      console.log("faq data is", data);
     });
   }
   render() {
