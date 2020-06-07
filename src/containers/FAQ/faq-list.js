@@ -15,7 +15,6 @@ class FAQList extends Component {
   render() {
     const { activeIndex } = this.state;
     const { list } = this.props;
-    console.log("list s", list);
 
     return (
       <Accordion>
