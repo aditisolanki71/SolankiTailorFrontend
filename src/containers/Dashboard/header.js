@@ -1,24 +1,33 @@
 import React, { Component, Fragment } from "react";
-import { Menu, Header, Segment } from "semantic-ui-react";
+import { Header, Image, Menu, Segment, Sidebar, Grid } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
+import img1 from "./../../images/img1.jpg";
 import { makeUrl } from "../../helpers/url-manager";
 class HeaderPage extends Component {
-  state = {
-    activeItem: "home",
-    isSidebarVisible: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: "home",
+      isSidebarVisible: false,
+    };
+    this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   componentDidMount() {
-    console.log("did ", this.state.isSidebarVisible);
+    console.log("did sidebar ", this.state.isSidebarVisible);
   }
-  showSidebar = () => {
-    console.log("sideebar", this.state.isSidebarVisible);
-    this.setState({ isSidebarVisible: true });
+
+  handleClick = () => {
+    this.setState({
+      isSidebarVisible: !this.state.isSidebarVisible,
+    });
     console.log("sidebar", this.state.isSidebarVisible);
   };
+
   render() {
     const { activeItem } = this.state;
 
@@ -33,7 +42,7 @@ class HeaderPage extends Component {
             <FontAwesomeIcon
               icon="bars"
               style={{ "margin-right": "30px", "margin-left": "20px" }}
-              onClick={this.showSidebar}
+              onClick={this.handleClick}
             />
             Float Left
           </Header>
@@ -85,6 +94,62 @@ class HeaderPage extends Component {
             </Menu>
           </Header>
         </Segment>
+        <Sidebar.Pushable
+          // v-if={this.state.isSidebarVisible}
+          as={Segment}
+          style={{
+            "margin-top": "0px",
+            "border-radius": "0px",
+            // height: "400px",
+          }}
+        >
+          <Grid celled="internally">
+            <Grid.Row>
+              <Grid.Column width={3} style={{ height: "100px" }}>
+                <Sidebar
+                  style={{ "background-color": "#00b5ad" }}
+                  as={Menu}
+                  animation="overlay"
+                  icon="labeled"
+                  inverted
+                  vertical
+                  width="thin"
+                  visible={this.state.isSidebarVisible}
+                  onHide={this.state.isSidebarVisible}
+                >
+                  <Menu.Item as="a">
+                    {/* <Icon name='home' /> */}
+                    Traditional
+                    {/* choli,chaniyacholi,kurti */}
+                  </Menu.Item>
+                  <Menu.Item as="a">
+                    {/* <Icon name='gamepad' /> */}
+                    Wastern
+                    {/* gown */}
+                  </Menu.Item>
+                  <Menu.Item as="a">
+                    {/* <Icon name='camera' /> */}
+                    TopWear
+                    {/* blouse */}
+                  </Menu.Item>
+                  <Menu.Item as="a">
+                    {/* <Icon name='camera' /> */}
+                    FAQ
+                    {/* blouse */}
+                  </Menu.Item>
+                </Sidebar>
+              </Grid.Column>
+              <Grid.Column width={10} style={{ height: "500px" }}>
+                <Sidebar.Pusher>
+                  <Segment basic>
+                    <Header as="h3">Application Content</Header>
+                    <Image src={img1} width="70%" />
+                  </Segment>
+                </Sidebar.Pusher>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Sidebar.Pushable>
       </Fragment>
     );
   }

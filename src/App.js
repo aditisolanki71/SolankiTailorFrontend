@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./containers/Dashboard/header";
-import SidebarPage from "./containers/Dashboard/sidebar";
+//import SidebarPage from "./containers/Dashboard/sidebar";
 import Banner from "./containers/Dashboard/banner";
 import Topdesign from "./containers/Dashboard/top-design";
 import Testimonial from "./containers/Dashboard/testimonial";
@@ -39,7 +39,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <SidebarPage />
+        {/* <SidebarPage /> */}
         <Banner list={this.state.mainCategoryList} />
         <Topdesign />
         <Testimonial list={this.state.testimonialList} />
