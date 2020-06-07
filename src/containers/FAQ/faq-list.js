@@ -14,9 +14,29 @@ class FAQList extends Component {
 
   render() {
     const { activeIndex } = this.state;
+    const { list } = this.props;
+    console.log("list s", list);
+
     return (
       <Accordion>
-        <Accordion.Title
+        {(list || []).length > 0
+          ? list.map((item, index) => (
+              <div>
+                <Accordion.Title
+                  active={activeIndex === index}
+                  index={index}
+                  onClick={this.handleClick}
+                >
+                  <Icon name="dropdown" />
+                  {item.question}
+                </Accordion.Title>
+                <Accordion.Content active={activeIndex === index}>
+                  <p>{item.answer}</p>
+                </Accordion.Content>
+              </div>
+            ))
+          : "no data found"}
+        {/* <Accordion.Title
           active={activeIndex === 0}
           index={0}
           onClick={this.handleClick}
@@ -46,9 +66,9 @@ class FAQList extends Component {
             temperament. Owners often select a breed of dog that they find to be
             compatible with their own lifestyle and desires from a companion.
           </p>
-        </Accordion.Content>
+        </Accordion.Content> */}
 
-        <Accordion.Title
+        {/* <Accordion.Title
           active={activeIndex === 2}
           index={2}
           onClick={this.handleClick}
@@ -68,7 +88,7 @@ class FAQList extends Component {
             finding your dog from a shelter, helps give a good home to a dog who
             may not find one so readily.
           </p>
-        </Accordion.Content>
+        </Accordion.Content> */}
       </Accordion>
     );
   }
