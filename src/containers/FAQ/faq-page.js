@@ -47,8 +47,7 @@ class FAQPage extends Component {
   }
   render() {
     return (
-      <Fragment>
-        <HeaderPage />
+      <HeaderPage>
         <Header as="h3" textAlign="center" dividing>
           FAQ
         </Header>
@@ -58,7 +57,7 @@ class FAQPage extends Component {
           <FAQList list={this.state.faqlist} />
         </Tab.Pane>
         <Footer />
-      </Fragment>
+      </HeaderPage>
     );
   }
 }

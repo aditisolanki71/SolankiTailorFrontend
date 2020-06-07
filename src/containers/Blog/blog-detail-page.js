@@ -7,8 +7,7 @@ import img1 from "./../../images/img1.jpg";
 class BlogDetailPage extends Component {
   render() {
     return (
-      <Fragment>
-        <HeaderPage />
+      <HeaderPage>
         <Header as="h3" textAlign="center" dividing>
           From The Blog
         </Header>
@@ -64,7 +63,7 @@ class BlogDetailPage extends Component {
           <Grid.Column width={1}></Grid.Column>
         </Grid>
         <Footer />
-      </Fragment>
+      </HeaderPage>
     );
   }
 }

@@ -27,8 +27,7 @@ class BlogPage extends Component {
   render() {
     const { bloglist } = this.state;
     return (
-      <Fragment>
-        <HeaderPage />
+      <HeaderPage>
         <Header as="h3" textAlign="center" dividing>
           From The Blog
         </Header>
@@ -79,7 +78,7 @@ class BlogPage extends Component {
           </Grid.Row> */}
         </Grid>
         <Footer />
-      </Fragment>
+      </HeaderPage>
     );
   }
 }
