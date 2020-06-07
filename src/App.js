@@ -38,12 +38,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header />
-        {/* <SidebarPage /> */}
-        <Banner list={this.state.mainCategoryList} />
-        <Topdesign />
-        <Testimonial list={this.state.testimonialList} />
-        <Footer />
+        <Header>
+          {/* <SidebarPage /> */}
+          <Banner list={this.state.mainCategoryList} />
+          <Topdesign />
+          <Testimonial list={this.state.testimonialList} />
+          <Footer />
+        </Header>
       </div>
     );
   }

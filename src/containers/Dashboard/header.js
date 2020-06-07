@@ -105,9 +105,12 @@ class HeaderPage extends Component {
         >
           <Grid celled="internally">
             <Grid.Row>
-              <Grid.Column width={3} style={{ height: "100px" }}>
+              <Grid.Column width={2}>
                 <Sidebar
-                  style={{ "background-color": "#00b5ad" }}
+                  style={{
+                    "background-color": "#00b5ad",
+                    "max-height": "200px",
+                  }}
                   as={Menu}
                   animation="overlay"
                   icon="labeled"
@@ -139,11 +142,12 @@ class HeaderPage extends Component {
                   </Menu.Item>
                 </Sidebar>
               </Grid.Column>
-              <Grid.Column width={10} style={{ height: "500px" }}>
+              <Grid.Column width={16} style={{ height: "auto" }}>
                 <Sidebar.Pusher>
                   <Segment basic>
-                    <Header as="h3">Application Content</Header>
-                    <Image src={img1} width="70%" />
+                    {/* <Header as="h3">Application Content</Header>
+                    <Image src={img1} width="70%" /> */}
+                    {this.props.children}
                   </Segment>
                 </Sidebar.Pusher>
               </Grid.Column>
