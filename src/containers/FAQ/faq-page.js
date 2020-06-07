@@ -42,17 +42,19 @@ class FAQPage extends Component {
   }
   render() {
     return (
-      <HeaderPage>
-        <Header as="h3" textAlign="center" dividing>
-          FAQ
-        </Header>
+      <Fragment>
+        <HeaderPage>
+          <Header as="h3" textAlign="center" dividing>
+            FAQ
+          </Header>
 
-        <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
-        <Tab.Pane attached={false}>
-          <FAQList list={this.state.faqlist} />
-        </Tab.Pane>
+          <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
+          <Tab.Pane attached={false}>
+            <FAQList list={this.state.faqlist} />
+          </Tab.Pane>
+        </HeaderPage>
         <Footer />
-      </HeaderPage>
+      </Fragment>
     );
   }
 }

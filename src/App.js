@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Header from "./containers/Dashboard/header";
 //import SidebarPage from "./containers/Dashboard/sidebar";
 import Banner from "./containers/Dashboard/banner";
@@ -37,15 +37,15 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <Fragment>
         <Header>
           {/* <SidebarPage /> */}
           <Banner list={this.state.mainCategoryList} />
           <Topdesign />
           <Testimonial list={this.state.testimonialList} />
-          <Footer />
         </Header>
-      </div>
+        <Footer />
+      </Fragment>
     );
   }
 }

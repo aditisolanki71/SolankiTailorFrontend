@@ -12,7 +12,7 @@ class Footer extends Component {
     return (
       <div
         class="ui inverted teal vertical footer segment"
-        style={{ left: "0", bottom: "0", width: "100%" }}
+        style={{ left: "0", bottom: "0" }}
       >
         <div class="ui center aligned container">
           <h4 class="ui inverted header">
