@@ -24,6 +24,10 @@ class BlogPage extends Component {
   }
   render() {
     const { bloglist } = this.state;
+    let columnLength = bloglist.length;
+    if (columnLength > 3) {
+      columnLength = 3;
+    }
     return (
       <Fragment>
         <HeaderPage>
@@ -31,12 +35,17 @@ class BlogPage extends Component {
             From The Blog
           </Header>
           <Grid>
-            <Grid.Row columns={bloglist.length} style={{ margin: "30px" }}>
+            <Grid.Row columns={columnLength} style={{ margin: "30px" }}>
               {(bloglist || []).length > 0
                 ? bloglist.map((item, index) => (
                     <Grid.Column
                       key={index}
-                      style={{ border: "1px solid black", padding: "10px" }}
+                      style={{
+                        border: "1px solid black",
+                        padding: "10px",
+                        "background-color": "#ffffff",
+                        margin: "20px 0px",
+                      }}
                     >
                       <Image
                         src={img4}

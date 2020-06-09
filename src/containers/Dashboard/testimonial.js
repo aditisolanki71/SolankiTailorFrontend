@@ -13,11 +13,11 @@ class Testimonial extends Component {
         </Header>
 
         <Grid>
-          <Grid.Row>
-            <Grid.Column width={2}></Grid.Column>
+          <Grid.Row columns={list.length} style={{ margin: "10px 100px" }}>
+            {/* <Grid.Column width={2}></Grid.Column> */}
             {(list || []).length > 0
               ? list.map((item, index) => (
-                  <Grid.Column key={index} width={4}>
+                  <Grid.Column key={index}>
                     <Image
                       src={img4}
                       size="tiny"
@@ -72,7 +72,7 @@ class Testimonial extends Component {
               </span>
               <h1>Aditi Solanki</h1>
     </Grid.Column> */}
-            <Grid.Column width={2}></Grid.Column>
+            {/* <Grid.Column width={2}></Grid.Column> */}
           </Grid.Row>
         </Grid>
       </Fragment>
