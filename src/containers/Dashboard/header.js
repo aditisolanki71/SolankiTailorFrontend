@@ -30,12 +30,12 @@ class HeaderPage extends Component {
         <Segment
           clearing
           inverted
-          style={{ "margin-bottom": "0px", "background-color": "#00b5ad" }}
+          style={{ marginBottom: "0px", backgroundColor: "#00b5ad" }}
         >
           <Header as="h2" floated="left">
             <FontAwesomeIcon
               icon="bars"
-              style={{ "margin-right": "30px", "margin-left": "20px" }}
+              style={{ marginRight: "30px", marginLeft: "20px" }}
               onClick={this.handleClick}
             />
             Float Left
@@ -45,9 +45,9 @@ class HeaderPage extends Component {
             <Menu
               inverted
               style={{
-                "justify-content": "flex-end",
-                "margin-bottom": "0px",
-                "background-color": "#00b5ad",
+                justifyContent: "flex-end",
+                marginBottom: "0px",
+                backgroundColor: "#00b5ad",
               }}
             >
               <Link to={makeUrl("/")}>
@@ -92,8 +92,8 @@ class HeaderPage extends Component {
           // v-if={this.state.isSidebarVisible}
           as={Segment}
           style={{
-            "margin-top": "0px",
-            "border-radius": "0px",
+            marginTop: "0px",
+            borderRadius: "0px",
             // height: "400px",
           }}
         >
@@ -102,8 +102,8 @@ class HeaderPage extends Component {
               <Grid.Column width={2}>
                 <Sidebar
                   style={{
-                    "background-color": "#00b5ad",
-                    "max-height": "200px",
+                    backgroundColor: "#00b5ad",
+                    maxHeight: "200px",
                   }}
                   as={Menu}
                   animation="overlay"

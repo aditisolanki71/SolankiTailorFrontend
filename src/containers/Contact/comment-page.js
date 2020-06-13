@@ -37,7 +37,7 @@ class CommentPage extends Component {
             color="teal"
             fluid
             size="small"
-            style={{ "margin-top": "15px", width: "50%" }}
+            style={{ marginTop: "15px", width: "50%" }}
           >
             Send Message
           </Button>

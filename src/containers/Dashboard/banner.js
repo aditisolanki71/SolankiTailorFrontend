@@ -17,7 +17,7 @@ class Banner extends Component {
                   key={index}
                   style={{
                     padding: "10px",
-                    "background-color": "#ffffff",
+                    backgroundcolor: "#ffffff",
                     margin: "20px 0px",
                   }}
                 >
