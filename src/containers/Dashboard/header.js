@@ -129,11 +129,13 @@ class HeaderPage extends Component {
                     TopWear
                     {/* blouse */}
                   </Menu.Item>
-                  <Menu.Item as="a">
-                    {/* <Icon name='camera' /> */}
-                    FAQ
-                    {/* blouse */}
-                  </Menu.Item>
+                  <Link to={makeUrl("faq-page")}>
+                    <Menu.Item as="a">
+                      {/* <Icon name='camera' /> */}
+                      FAQ
+                      {/* blouse */}
+                    </Menu.Item>
+                  </Link>
                 </Sidebar>
               </Grid.Column>
               <Grid.Column width={16} style={{ height: "auto" }}>
