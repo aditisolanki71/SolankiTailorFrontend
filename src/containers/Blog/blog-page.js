@@ -4,9 +4,6 @@ import { listApi as allBlog } from "./../../redux/modules/blog";
 import HeaderPage from "../Dashboard/header";
 import Footer from "../Dashboard/footer";
 
-import img1 from "./../../images/img1.jpg";
-import img2 from "./../../images/img2.jpg";
-import img4 from "./../../images/img4.jpg";
 class BlogPage extends Component {
   constructor(props) {
     super(props);
@@ -48,7 +45,7 @@ class BlogPage extends Component {
                       }}
                     >
                       <Image
-                        src={img4}
+                        src={`/file/download/${item.image}`}
                         size="tiny"
                         height="30px"
                         circular
