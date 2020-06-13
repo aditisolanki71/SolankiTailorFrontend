@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from "react";
-import { Header, Image, Menu, Segment, Sidebar, Grid } from "semantic-ui-react";
+import { Header, Menu, Segment, Sidebar, Grid } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
-import img1 from "./../../images/img1.jpg";
 import { makeUrl } from "../../helpers/url-manager";
 class HeaderPage extends Component {
   constructor(props) {

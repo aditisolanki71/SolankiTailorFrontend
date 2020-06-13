@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from "react";
 import { Grid, Image, Header } from "semantic-ui-react";
-import img1 from "./../../images/img1.jpg";
-import img2 from "./../../images/img2.jpg";
 import img4 from "./../../images/img4.jpg";
 class Testimonial extends Component {
   render() {
