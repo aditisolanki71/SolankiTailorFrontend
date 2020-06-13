@@ -40,7 +40,6 @@ class App extends React.Component {
   fetchTestimonialData() {
     return allTestimonial().then((data) => {
       this.setState({ testimonialList: data });
-      console.log("testi", this.state.testimonialList);
     });
   }
   render() {
