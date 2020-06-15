@@ -5,4 +5,5 @@ export default {
   ALLTESTIMONIAL: "/testimonial",
   ALLBLOG: "/blog",
   ALLFAQ: "/faq",
+  ALLUSER: "/user",
 };

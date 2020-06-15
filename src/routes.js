@@ -61,6 +61,27 @@ export default (store, client, hostName, pathName, cookie) => {
           loader: () => import("./containers/FAQ/faq-page"),
         })}
       />
+      <Route
+        path={getRoutePath("admin/")}
+        component={RouterLoader({
+          // loader: () => import('./containers/Register/register')
+          loader: () => import("./containers/AdminPanel/User"),
+        })}
+      />
+      <Route
+        path={getRoutePath("admin/profile")}
+        component={RouterLoader({
+          // loader: () => import('./containers/Register/register')
+          loader: () => import("./containers/AdminPanel/Profile/profile"),
+        })}
+      />
+      <Route
+        path={getRoutePath("admin/user")}
+        component={RouterLoader({
+          // loader: () => import('./containers/Register/register')
+          loader: () => import("./containers/AdminPanel/User/index"),
+        })}
+      />
       <Route component={App} path="/" />
     </Route>
   );

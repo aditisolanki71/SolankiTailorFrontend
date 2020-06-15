@@ -9,3 +9,8 @@ registerUrl("contact", "/contact");
 registerUrl("blog", "/blog");
 registerUrl("blog-detail", "/blog-detail");
 registerUrl("faq-page", "/faq");
+
+//admin
+registerUrl("admin/", "/admin");
+registerUrl("admin/profile", "/admin/profile");
+registerUrl("admin/user", "/user");

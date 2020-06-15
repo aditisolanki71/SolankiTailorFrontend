@@ -3,6 +3,7 @@ import { Header, Menu, Segment, Sidebar, Grid } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
 import { makeUrl } from "../../helpers/url-manager";
+
 class HeaderPage extends Component {
   constructor(props) {
     super(props);
@@ -133,6 +134,20 @@ class HeaderPage extends Component {
                     <Menu.Item as="a">
                       {/* <Icon name='camera' /> */}
                       FAQ
+                      {/* blouse */}
+                    </Menu.Item>
+                  </Link>
+                  <Link to={makeUrl("admin/user")}>
+                    <Menu.Item as="a">
+                      {/* <Icon name='camera' /> */}
+                      User
+                      {/* blouse */}
+                    </Menu.Item>
+                  </Link>
+                  <Link to={makeUrl("faq-page")}>
+                    <Menu.Item as="a">
+                      {/* <Icon name='camera' /> */}
+                      Blog
                       {/* blouse */}
                     </Menu.Item>
                   </Link>
