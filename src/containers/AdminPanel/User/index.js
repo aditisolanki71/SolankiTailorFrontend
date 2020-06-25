@@ -1,6 +1,12 @@
 import React, { Component, Fragment } from "react";
 import { Header } from "semantic-ui-react";
-import { listApi as allUser, readApi } from "../../../redux/modules/user";
+import {
+  listApi as allUser,
+  readApi,
+  createApi,
+  updateApi,
+  removeApi,
+} from "../../../redux/modules/user";
 import HeaderPage from "../../Dashboard/header";
 import Footer from "../../Dashboard/footer";
 import UserList from "./user-list";
@@ -30,12 +36,40 @@ class UserPage extends Component {
       modalOpen: false,
     });
 
+  createOrUpdateUser = (requestData, id) => {
+    if (id) {
+      return updateApi(requestData, id).then(() => {
+        console.log("update", requestData);
+        this.fetchAllUser().then(() => {
+          window.__SCHEDULER__.rescheduleAction("fetchUsers");
+        });
+      });
+    }
+    return createApi(requestData).then(() => {
+      this.fetchAllUser().then(() => {
+        window.__SCHEDULER__.rescheduleAction("fetchUsers");
+      });
+    });
+  };
+
+  removeUser = (id) => {
+    console.log("inside remove user", id);
+    // confirm("You want to Remove Technician")
+    //   .then(() => {
+    //     removeApi(id).then(() => {
+    //       this.closeModal();
+    //       window.__SCHEDULER__.rescheduleAction("fetchUsers");
+    //     });
+    //   })
+    //   .catch((e) => e);
+  };
+
   handleSubmit = (requestData, id) => {
     console.log("inside handle submit");
-    // this.createOrUpdateUser(requestData, id).then(() => {
-    //   this.closeModal();
-    //   window.__SCHEDULER__.rescheduleAction("fetchTechnicians");
-    // });
+    this.createOrUpdateUser(requestData, id).then(() => {
+      this.closeModal();
+      window.__SCHEDULER__.rescheduleAction("fetchUsers");
+    });
   };
   setEditModal = (id) => {
     if (id) {

@@ -1,28 +1,10 @@
-//file-3
-// import React, { Fragment } from "react";
-// class UserList extends React.Component {
-//   render() {
-//     return (
-//       <Fragment>
-//         <div>
-//           <h1>user ist page</h1>
-//         </div>
-//       </Fragment>
-//     );
-//   }
-// }
-
-// export default UserList;
-
-/*eslint-disable */
 import React from "react";
-import { Table, Dropdown } from "semantic-ui-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Table } from "semantic-ui-react";
 const wordWrap = {
   maxWidth: 0,
   overflow: "hidden",
   textOverflow: "ellipsis",
-  whiteSpace: "nowrap"
+  whiteSpace: "nowrap",
 };
 
 const getHeaderRow = () => (
@@ -44,15 +26,15 @@ const buildTableRow = (item, props) => (
     <Table.Cell style={wordWrap}>{item.email}</Table.Cell>
     <Table.Cell style={wordWrap}>{item.address}</Table.Cell>
     <Table.Cell style={{ overflow: "unset" }}>
-     <i
-        onClick={e => {
+      <i
+        onClick={(e) => {
           e.stopPropagation();
           props.onEdit(item.id);
         }}
         className="edit icon"
       />
       <i
-        onClick={e => {
+        onClick={(e) => {
           e.stopPropagation();
           if (!item.oob) props.onRemove(item.id);
         }}
@@ -63,7 +45,7 @@ const buildTableRow = (item, props) => (
   </Table.Row>
 );
 
-export const UserList = props => (
+export const UserList = (props) => (
   <Table celled>
     <Table.Header>{getHeaderRow()}</Table.Header>
     <Table.Body>
@@ -82,8 +64,8 @@ export const UserList = props => (
 
 UserList.defaultProps = {
   list: [],
-  onEdit: e => e,
-  onRemove: e => e
+  onEdit: (e) => e,
+  onRemove: (e) => e,
 };
 
 export default UserList;
