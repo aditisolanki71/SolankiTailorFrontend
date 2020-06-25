@@ -17,8 +17,6 @@ class CreateModal extends React.Component {
   setFormData(data) {
     this.setState({
       formdata: {
-        categoryModule: "INCIDENT",
-        categoryType: "SOURCE",
         ...data.formdata,
       },
     });

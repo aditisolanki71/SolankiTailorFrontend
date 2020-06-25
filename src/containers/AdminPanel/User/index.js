@@ -11,6 +11,7 @@ import HeaderPage from "../../Dashboard/header";
 import Footer from "../../Dashboard/footer";
 import UserList from "./user-list";
 import CreateModal from "./create-modal";
+import { Link } from "react-router";
 class UserPage extends Component {
   constructor(props) {
     super(props);
@@ -54,6 +55,9 @@ class UserPage extends Component {
 
   removeUser = (id) => {
     console.log("inside remove user", id);
+    removeApi(id).then(() => {
+      this.closeModal();
+    });
     // confirm("You want to Remove Technician")
     //   .then(() => {
     //     removeApi(id).then(() => {
@@ -68,7 +72,6 @@ class UserPage extends Component {
     console.log("inside handle submit");
     this.createOrUpdateUser(requestData, id).then(() => {
       this.closeModal();
-      window.__SCHEDULER__.rescheduleAction("fetchUsers");
     });
   };
   setEditModal = (id) => {
@@ -98,6 +101,13 @@ class UserPage extends Component {
           <Header as="h3" textAlign="center" dividing>
             Users
           </Header>
+          <Link
+            onClick={() => this.setEditModal()}
+            to="javascript:;"
+            style={{ float: "right" }}
+          >
+            <i className="plus icon" /> Add User
+          </Link>
           <UserList
             list={userlist}
             onEdit={this.setEditModal}
@@ -109,7 +119,6 @@ class UserPage extends Component {
               onCreate={this.handleSubmit}
               onClose={this.closeModal}
               formdata={this.state.formdata}
-              readOnly={this.state.readOnly}
             />
           )}
         </HeaderPage>
