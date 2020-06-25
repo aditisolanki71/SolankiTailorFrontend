@@ -57,6 +57,7 @@ class UserPage extends Component {
     console.log("inside remove user", id);
     removeApi(id).then(() => {
       this.closeModal();
+      window.__SCHEDULER__.rescheduleAction("fetchUsers");
     });
     // confirm("You want to Remove Technician")
     //   .then(() => {
@@ -72,6 +73,7 @@ class UserPage extends Component {
     console.log("inside handle submit");
     this.createOrUpdateUser(requestData, id).then(() => {
       this.closeModal();
+      window.__SCHEDULER__.rescheduleAction("fetchUsers");
     });
   };
   setEditModal = (id) => {
