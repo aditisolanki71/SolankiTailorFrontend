@@ -1,6 +1,5 @@
 import React from "react";
-import { Modal } from "semantic-ui-react";
-
+import { Modal, Form } from "semantic-ui-react";
 class CreateModal extends React.Component {
   static defaultProps = {
     onCreate: () => Promise.resolve(),
@@ -58,6 +57,9 @@ class CreateModal extends React.Component {
     });
   };
 
+  // onCancel() {
+  //   this.props.onClose();
+  // }
   render() {
     const { onClose } = this.props;
     const { formdata } = this.state;
@@ -70,81 +72,63 @@ class CreateModal extends React.Component {
         closeIcon
       >
         <Modal.Header>
-          <span>{formdata.id ? "edit" : "add"} user</span>
+          <span>{formdata.id ? "Edit" : "Add"} User</span>
           <i as="a" onClick={onClose} />
         </Modal.Header>
         <Modal.Content>
           <Modal.Description>
-            <div>
-              <div>
-                <div>
-                  <label htmlFor="name"> name </label>
-                  <input
-                    autoFocus
-                    value={formdata.name || ""}
-                    onChange={(e) =>
-                      this.handleChange({ name: e.target.value })
-                    }
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="name"
-                  />
-                  {/* {errorFor(validationErrors, "name") && formSubmitted && (
-                    <label htmlFor="nameError">
-                      {errorFor(validationErrors, "name")}
-                    </label>
-                  )} */}
-                </div>
-                <div>
-                  <label htmlFor="email">email</label>
-                  <input
-                    type="text"
-                    id="email"
-                    name="email"
-                    placeholder="email"
-                    value={formdata.email || ""}
-                    onChange={(e) =>
-                      this.handleChange({ email: e.target.value })
-                    }
-                  />
-                  {/* {errorFor(validationErrors, "email") && formSubmitted && (
-                    <label htmlFor="emailError">
-                      {errorFor(validationErrors, "email")}
-                    </label>
-                  )} */}
-                </div>
-                <div>
-                  <label htmlFor="address"> Address </label>
-                  <input
-                    autoFocus
-                    value={formdata.address || ""}
-                    onChange={(e) =>
-                      this.handleChange({ address: e.target.value })
-                    }
-                    type="text"
-                    id="address"
-                    name="address"
-                    placeholder="address"
-                  />
-                  {/* {errorFor(validationErrors, "name") && formSubmitted && (
-                    <label htmlFor="nameError">
-                      {errorFor(validationErrors, "name")}
-                    </label>
-                  )} */}
-                </div>
-              </div>
-            </div>
+            <Form>
+              <Form.Group widths="equal">
+                <Form.Input
+                  fluid
+                  label="Name"
+                  autoFocus
+                  value={formdata.name || ""}
+                  onChange={(e) => this.handleChange({ name: e.target.value })}
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                />
+                <Form.Input
+                  fluid
+                  label="Email"
+                  placeholder="Email"
+                  type="text"
+                  id="email"
+                  name="email"
+                  value={formdata.email || ""}
+                  onChange={(e) => this.handleChange({ email: e.target.value })}
+                />
+              </Form.Group>
+              <Form.Group widths="equal">
+                <Form.Input
+                  fluid
+                  label="Address"
+                  autoFocus
+                  value={formdata.address || ""}
+                  onChange={(e) =>
+                    this.handleChange({ address: e.target.value })
+                  }
+                  type="text"
+                  id="address"
+                  name="address"
+                  placeholder="address"
+                />
+              </Form.Group>
+            </Form>
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
           <button
             onClick={this.onSubmit}
-            className="ui button default"
+            className="ui button primary"
             type="button"
           >
-            {formdata.id ? "update" : "add"}
-            {/*{__translate('comman:add')}*/}
+            {formdata.id ? "Update" : "Add"}
+          </button>
+          <button onClick={onClose} className="ui button default" type="button">
+            Cancel
           </button>
         </Modal.Actions>
       </Modal>

@@ -48,7 +48,7 @@ class UserPage extends Component {
     }
     return createApi(requestData).then(() => {
       this.fetchAllUser().then(() => {
-        window.__SCHEDULER__.rescheduleAction("fetchUsers");
+        // window.__SCHEDULER__.rescheduleAction("fetchUsers");
       });
     });
   };
@@ -57,7 +57,7 @@ class UserPage extends Component {
     console.log("inside remove user", id);
     removeApi(id).then(() => {
       this.closeModal();
-      window.__SCHEDULER__.rescheduleAction("fetchUsers");
+      // window.__SCHEDULER__.rescheduleAction("fetchUsers");
     });
     // confirm("You want to Remove Technician")
     //   .then(() => {
