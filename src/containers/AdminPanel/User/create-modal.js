@@ -9,7 +9,6 @@ class CreateModal extends React.Component {
 
   state = {
     validationErrors: {},
-    formSubmitted: false,
     formdata: {},
   };
 
@@ -48,9 +47,6 @@ class CreateModal extends React.Component {
 
   onSubmit = () => {
     const { formdata } = this.state;
-    this.setState({
-      formSubmitted: true,
-    });
 
     this.props.onCreate(formdata, formdata.id).then(() => {
       this.props.onClose();
